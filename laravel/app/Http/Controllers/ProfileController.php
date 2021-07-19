@@ -15,7 +15,7 @@ class ProfileController extends Controller
         $profile = Profile::query()->find($id);
 
         // データがない場合はエラーを表示する
-        if (!profile) {
+        if (!$profile) {
             die('プロフィールが未登録です。');
             exit;
         }
@@ -56,7 +56,7 @@ class ProfileController extends Controller
 
         // $profileがnull、つまりデータがない場合はcreateの画面に飛ばす
         if (!$profile) {
-            return redirirect(route('profiles.create'));
+            return redirect(route('profiles.create'));
         }
 
         // ログインしているユーザーのIDとProfileのIDが一致していない場合エラーにする
