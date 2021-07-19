@@ -13,6 +13,7 @@ class CreateBooksTable extends Migration
      */
     public function up()
     {
+        // todo データベースのカラムを定義する
         Schema::create('books', function (Blueprint $table) {
             $table->id();
             $table->timestamps();

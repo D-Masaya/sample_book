@@ -13,6 +13,7 @@ class CreateCategoriesTable extends Migration
      */
     public function up()
     {
+        // todo データベースのカラムを定義する        
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->timestamps();

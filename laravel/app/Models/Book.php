@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Book extends Model
 {
     use HasFactory;
+
+    // todo $fillableを設定
+
 }
