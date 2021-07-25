@@ -60,6 +60,57 @@
             <?php } ?>
         </div>
     </nav>
+
+<!-- メイン -->
+<div class="container pt-3">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 align-self-center ">
+            <!-- プロフィール -->
+            <div class="card border-dark mb-3">
+                <div class="card-header">プロフィール</div>
+                <div class="card-body text-dark">
+                    <table class="table">
+                        <tr>
+                            <th>ID</th>
+                            <td><?php echo $user['id']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>名前</th>
+                            <td><?php echo $user['name']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>登録日</th>
+                            <td><?php echo $user['created_at']; ?></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 align-self-center ">
+            <!-- 自己紹介 -->
+            <div class="card border-dark mb-3">
+                <div class="card-header">自己紹介</div>
+                <div class="card-body text-dark">
+                    <table class="table">
+                        <tr>
+                            <th>好きなジャンル</th>
+                            <td><input type="text" placeholder="好きなジャンル"></td>
+                        </tr>
+                        <tr>
+                            <th>好きな本</th>
+                            <td><input type="text" placeholder="好きな本"></td>
+                        </tr>
+                        <tr>
+                            <th>メッセージ</th>
+                            <td><textarea cols="30" rows="10"></textarea></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
