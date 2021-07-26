@@ -15,7 +15,7 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable(false)->comment('ユーザーID');
+            $table->unsignedBigInteger('user_id')->unique()->nullable(false)->comment('ユーザーID');
             $table->string('like_1')->nullable()->comment('好きな本');
             $table->string('like_2')->nullable()->comment('好きなジャンル');
             $table->text('message')->nullable()->comment('メッセージ');

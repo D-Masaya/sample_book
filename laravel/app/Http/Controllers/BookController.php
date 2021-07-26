@@ -13,7 +13,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        return view('books.form');
     }
 
     /**
@@ -23,7 +23,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('books.form');
     }
 
     /**
@@ -56,7 +56,8 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        print_r($id);
+        return view('books.form');
     }
 
     /**
