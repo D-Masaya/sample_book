@@ -86,11 +86,26 @@
                     <textarea name="body" class="form-control" id="inputBody" placeholder="内容を入力してください。" rows="10" required></textarea>
                 </div>
             </div>
+           
             <div class="form-group row">
                 <div class="col-sm-12 text-center">
                     <button type="submit" class="btn btn-primary">投稿</button>
                 </div>
             </div>
+            <!-- 本の画像登録フォーム -->
+            <form method="post" action="profile_post.php" enctype="multipart/form-data">
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input name="file" type="file" class="custom-file-input" id="inputGroupFile03">
+                                <label class="custom-file-label" for="inputGroupFile03">ファイルを選択</label>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-sm-12 text-center">
+                                <button type="submit" class="btn btn-primary">登録</button>
+                            </div>
+                        </div>
+            </form>
         </form>
     </div>
 </div>
