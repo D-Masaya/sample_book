@@ -45,14 +45,14 @@ class ProfileController extends Controller
         }
 
         // 登録が完了したらshowのページへリダイレクト
-        return redirect('profiles.show', ['profile' => $profile->id]);
+        return redirect(route('profiles.show', ['profile' => $profile->id]));
     }
 
     public function edit($id)
     {
         // ログインしているユーザーを取得
         $user = Auth::user();
-        $profile =$user->profile;   // relationから取得できる
+        $profile = Profile::query()->find($id);
 
         // $profileがnull、つまりデータがない場合はcreateの画面に飛ばす
         if (!$profile) {
@@ -66,7 +66,7 @@ class ProfileController extends Controller
         }
         
         // エラーがなければ表示する
-        return view('user_profiles.edit', ['profile' => $user]);
+        return view('profiles.edit', ['profile' => $profile]);
     }
 
     public function update(Request $request, $id)
