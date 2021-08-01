@@ -27,3 +27,5 @@ Route::get('sample', [App\Http\Controllers\BookController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('books', BookController::class);
+
+Route::resource('categories', CategoryController::class);
