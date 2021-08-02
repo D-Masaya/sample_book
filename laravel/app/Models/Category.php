@@ -9,5 +9,5 @@ class Category extends Model
 {
     use HasFactory;
 
-    // todo $fillableを設定
+    protected $fillable = ['name'];
 }

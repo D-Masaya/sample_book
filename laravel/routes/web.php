@@ -20,13 +20,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('profiles', ProfileController::class);
 Auth::routes();
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::resource('books', BookController::class);
+
+    Route::resource('categories', CategoryController::class);
+
+    Route::resource('profiles', ProfileController::class);
+});
 
 Route::get('sample', [App\Http\Controllers\BookController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('books', BookController::class);
-
-Route::resource('categories', CategoryController::class);

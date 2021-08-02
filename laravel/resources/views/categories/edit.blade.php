@@ -6,8 +6,8 @@
 <div class="card-body text-dark">
     <table class="table">
         <tr>
-            <th>好きなジャンル</th>
-            <td><input type="text" placeholder="好きなジャンル"></td>
+            <th>カテゴリー名</th>
+            <td><input type="text" placeholder="カテゴリー名"></td>
         </tr>
 
     </table>
