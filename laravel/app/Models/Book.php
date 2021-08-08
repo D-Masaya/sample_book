@@ -9,6 +9,5 @@ class Book extends Model
 {
     use HasFactory;
 
-    // todo $fillableを設定
-
+    protected $fillable = ['name', 'message'];
 }

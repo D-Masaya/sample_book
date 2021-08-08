@@ -3,7 +3,6 @@
 @section('content')
 
 <!-- ジャンル記入欄 -->
-<!-- ジャンル記入欄 -->
 <div class="container pt-3">
     <div class="row justify-content-center">
         <div class="col-sm-12 align-self-center ">

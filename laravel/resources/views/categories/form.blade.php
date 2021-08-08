@@ -17,7 +17,7 @@
                                 <table class="table">
                                     <tr>
                                         <th>カテゴリー名</th>
-                                        <td><input class="form-control" type="text" name="like_1"" placeholder=" 好きな本"></td>
+                                        <td><input class="form-control" type="text" name="like_1" placeholder=" 好きな本"></td>
                                     </tr>
                                 </table>
                             </div>
