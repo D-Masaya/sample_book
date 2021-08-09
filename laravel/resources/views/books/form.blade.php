@@ -9,7 +9,8 @@
             <div class="card border-dark mb-3">
                 <div class="card-header">おすすめの本を投稿</div>
                 <div class="card-body text-dark">
-                    <form method="post" action="">
+                    <form method="post" action="{{route('books.store')}}">
+                    @csrf()
                         <div class="form-group row">
                             <label for="inputTitle" class="col-sm-3 col-form-label">Title</label>
                             <div class="col-sm-9">
