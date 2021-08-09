@@ -38,7 +38,8 @@ class CategoryController extends Controller
         $name = $request->get('name');
         print_r($name);
         Category::query()->create([
-            'name' => $name
+            'name' => $name,
+            'category_id' => 1
         ]);
     }
 

@@ -39,7 +39,8 @@ class BookController extends Controller
         $message = $request->get('message');
         Book::query()->create([
             'name' => $name,
-            'message' => $message
+            'message' => $message,
+            'user_id' => 1
         ]);
 
     }
