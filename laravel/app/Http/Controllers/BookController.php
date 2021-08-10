@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Book;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
@@ -24,7 +26,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('books.form');
+        $categories = Category::all();
+        return view('books.form', ['categories' => $categories]);
     }
 
     /**
@@ -37,10 +40,15 @@ class BookController extends Controller
     {
         $name = $request->get('name');
         $message = $request->get('message');
+        $user_id = Auth::id();
+        $category_id = $request->get('category_id');
+        print_r($request->all());
         Book::query()->create([
             'name' => $name,
             'message' => $message,
-            'user_id' => 1
+            'user_id' => $user_id,
+            'category_id' => $category_id,
+            'photo' => ''
         ]);
 
     }
