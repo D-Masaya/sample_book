@@ -2,8 +2,8 @@
 
 @section('content')
 
+<div class="container pt-3">
 <table class="table">
-<div class="container">
   <thead>
     <tr>
       <th scope="col">ユーザーID</th>
@@ -22,7 +22,7 @@
     </tr>
     @endforeach
   </tbody>
-</div>
 </table>
+</div>
 
 @endsection()
