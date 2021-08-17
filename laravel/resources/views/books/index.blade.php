@@ -16,7 +16,7 @@
     @foreach($books as $value)
     <tr>
       <th scope="row">{{$value->user_id}}</th>
-      <td>{{$value->category_id}}</td>
+      <td>{{$value->categories->getData()}}</td>
       <td>{{$value->name}}</td>
       <td>{{$value->message}}</td>
     </tr>
