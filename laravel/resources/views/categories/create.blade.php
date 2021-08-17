@@ -17,7 +17,13 @@
                                 <table class="table">
                                     <tr>
                                         <th>カテゴリー名</th>
-                                        <td><input class="form-control" type="text" name="name" placeholder="カテゴリー名"></td>
+                                        <td>
+                                            <input class="form-control" type="text" name="name" placeholder="カテゴリー名">
+                                            <!-- エラー表示 -->
+                                            @error('name')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                            @enderror
+                                        </td>
                                     </tr>
                                 </table>
                             </div>

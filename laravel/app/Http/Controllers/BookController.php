@@ -16,7 +16,7 @@ class BookController extends Controller
      */
     public function index()
     {
-        $books = Book::all();
+        $books = Book::query()->where('user_id', Auth::id())->get();
         return view('books.index', ['books' => $books]);
     }
 
