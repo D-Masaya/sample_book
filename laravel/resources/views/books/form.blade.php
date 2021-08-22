@@ -25,6 +25,11 @@
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
+                                <!-- エラー表示 -->
+                                @error('name','category_id')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+
                             </div>
                         </div>
                         <div class="form-group row">

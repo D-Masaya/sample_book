@@ -51,9 +51,9 @@ class BookController extends Controller
             'category_id' => $category_id,
             'photo' => ''
         ]);
-
+        return redirect()->route('books.index');
     }
-
+    
     /**
      * Display the specified resource.
      *
