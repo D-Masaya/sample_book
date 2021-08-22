@@ -24,8 +24,8 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => ['required', 'unique:books'],
-            'category_id' => ['required', 'unique:books'] 
+            'name' => ['required'],
+            'category_id' => ['required'] 
         ];
     }
 }
