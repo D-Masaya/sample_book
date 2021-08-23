@@ -44,13 +44,16 @@ class BookController extends Controller
         $message = $request->get('message');
         $user_id = Auth::id();
         $category_id = $request->get('category_id');
-        print_r($request->all());
+        //print_r($request->all());
+        $file = $request->file('file');
+        $path = $file->store('books');
+        print_r($path);
         Book::query()->create([
             'name' => $name,
             'message' => $message,
             'user_id' => $user_id,
             'category_id' => $category_id,
-            'photo' => ''
+            'photo' => $path
         ]);
         return redirect()->route('books.index');
     }

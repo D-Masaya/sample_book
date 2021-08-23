@@ -9,12 +9,15 @@
             <div class="card border-dark mb-3">
                 <div class="card-header">おすすめの本を投稿</div>
                 <div class="card-body text-dark">
-                    <form method="post" action="{{route('books.store')}}">
+                    <form method="post" action="{{route('books.store')}}" enctype="multipart/form-data">
                         @csrf()
                         <div class="form-group row">
                             <label for="inputTitle" class="col-sm-3 col-form-label">タイトル</label>
                             <div class="col-sm-9">
-                                <input type="text" name="name" class="form-control" id="inputTitle" placeholder="タイトル" required>
+                                <input type="text" name="name" class="form-control" id="inputTitle" placeholder="タイトル">
+                                @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">
@@ -26,16 +29,15 @@
                                     @endforeach
                                 </select>
                                 <!-- エラー表示 -->
-                                @error('name','category_id')
+                                @error('category_id')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="inputBody" class="col-sm-3 col-form-label">感想</label>
                             <div class="col-sm-9">
-                                <textarea name="message" class="form-control" id="inputBody" placeholder="内容を入力してください。" rows="10" required></textarea>
+                                <textarea name="message" class="form-control" id="inputBody" placeholder="内容を入力してください。" rows="10"></textarea>
                             </div>
                         </div>
                         <!-- 本の画像登録フォーム -->
@@ -45,6 +47,9 @@
                                 <div class="custom-file">
                                     <input name="file" type="file" class="custom-file-input" id="inputGroupFile03">
                                     <label class="custom-file-label" for="inputGroupFile03">本の画像</label>
+                                    @error('file')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
