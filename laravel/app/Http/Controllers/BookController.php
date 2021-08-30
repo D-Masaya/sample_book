@@ -18,6 +18,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::query()->where('user_id', Auth::id())->get();
+        $path = route('storage.app.books');
         return view('books.index', ['books' => $books]);
     }
 

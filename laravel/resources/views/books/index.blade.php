@@ -21,7 +21,8 @@
       <td>{{$value->name}}</td>
       <td>{{$value->message}}</td>
       <td>
-        <img src="http://127.0.0.1:8000/image?path=books/UnyfjCu2LbaGCRoNgiy3o10VEkZdsSnLxqEvJGdy.jpg" alt="" width="200"/>
+        {{$value->photo}}
+        <!-- <img src="http://127.0.0.1:8000/image?path=books/UnyfjCu2LbaGCRoNgiy3o10VEkZdsSnLxqEvJGdy.jpg" alt="" width="200"/> -->
       </td>
     </tr>
     @endforeach
