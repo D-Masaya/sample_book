@@ -34,6 +34,6 @@ Route::get('sample', [App\Http\Controllers\BookController::class, 'index']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('image', [App\Http\Controllers\ImageController::class, 'index']);
+Route::get('image', [App\Http\Controllers\ImageController::class, 'index'])->name('image');
 
 

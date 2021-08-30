@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BookRequest;
+use App\Http\Requests\BookUpdateRequest;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -18,7 +19,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::query()->where('user_id', Auth::id())->get();
-        $path = route('storage.app.books');
+        //$path = route('storage.app.books');
         return view('books.index', ['books' => $books]);
     }
 
@@ -58,7 +59,7 @@ class BookController extends Controller
         ]);
         return redirect()->route('books.index');
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -78,8 +79,9 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        print_r($id);
-        return view('books.form');
+        $book = Book::query()->find($id);
+        $categories = Category::all();
+        return view('books.edit', ['categories' => $categories, 'book' => $book]);
     }
 
     /**
@@ -89,9 +91,25 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BookUpdateRequest $request, $id)
     {
-        //
+        $book = Book::query()->find($id);
+        $name = $request->get('name');
+        $category_id = $request->get('category_id');
+        $message = $request->get('message');
+        $file = $request->file('file');
+        if ($file) {
+            $path = $file->store('books');
+        } else {
+            $path = $book->photo;
+        }
+        $book->update([
+            'name' => $name,
+            'category_id' => $category_id,
+            'message' => $message,
+            'photo' => $path
+        ]);
+        return redirect()->route('books.index');
     }
 
     /**
