@@ -6,9 +6,9 @@
 <div class="container pt-3">
     <div class="row justify-content-center">
         <div class="col-sm-12 align-self-center ">
-            <!-- 自己紹介 -->
+            <!-- ジャンル登録 -->
             <div class="card border-dark mb-3">
-                <div class="card-header">自己紹介</div>
+                <div class="card-header">ジャンル登録</div>
                 <div class="card-body text-dark">
                     <form method="POST" action="{{route('categories.store')}}">
                         @csrf()
