@@ -16,13 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('', [App\Http\Controllers\PageController::class, 'index']);
 
 Auth::routes();
 
-Route::group(['middleware' => 'auth'], function() {
+Route::group(['middleware' => 'auth'], function () {
     Route::resource('books', BookController::class);
 
     Route::resource('categories', CategoryController::class);
@@ -35,5 +33,3 @@ Route::get('sample', [App\Http\Controllers\BookController::class, 'index']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('image', [App\Http\Controllers\ImageController::class, 'index'])->name('image');
-
-

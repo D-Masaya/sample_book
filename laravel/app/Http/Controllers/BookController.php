@@ -120,6 +120,8 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $book = Book::query()->find($id);
+        $book->delete();
+        return redirect()->route('books.index');
     }
 }
