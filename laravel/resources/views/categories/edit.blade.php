@@ -10,15 +10,16 @@
             <div class="card border-dark mb-3">
                 <div class="card-header">ジャンル登録</div>
                 <div class="card-body text-dark">
-                    <form method="POST" action="{{route('categories.store')}}">
-                        @csrf()
+                    <form method="POST" action="{{route('categories.update', ['category'=>$categories->id])}}">
+                        @csrf()                        
+                        @method('put')
                         <div class="row">
                             <div class="col">
                                 <table class="table">
                                     <tr>
                                         <th>カテゴリー名</th>
                                         <td>
-                                            <input class="form-control" type="text" name="name" placeholder="カテゴリー名">
+                                            <input class="form-control" type="text" name="name" placeholder="カテゴリー名" value="{{$categories->name}}">
                                             <!-- エラー表示 -->
                                             @error('name')
                                             <div class="alert alert-danger">{{ $message }}</div>
