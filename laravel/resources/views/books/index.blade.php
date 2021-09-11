@@ -2,6 +2,10 @@
 
 @section('content')
 
+<div class="container-md">
+<a class="btn btn-outline-secondary" href="#" role="button">新規登録</a>
+<a class="btn btn-outline-secondary" href="{{route('categories.index')}}" role="button">カテゴリー一覧</a>
+</div>
 <div class="container pt-3">
   <table class="table">
     <thead>
