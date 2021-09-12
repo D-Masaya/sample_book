@@ -2,6 +2,9 @@
 
 @section('content')
 
+<div class="container-md">
+<a class="btn btn-outline-secondary" href="{{route('books.index')}}" role="button">投稿一覧</a>
+</div>
 <div class="container pt-3">
     <div class="row justify-content-center">
         <div class="col-sm-12 align-self-center ">
